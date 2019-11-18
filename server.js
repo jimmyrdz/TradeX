@@ -16,6 +16,9 @@ app.use(express.static("public"));
 app.use(session({ secret: "keyboard kat", resave: true, saveUninitialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
+// This is just a test
+// app.use(passport.authenticate());
+// End Test
 
 // Handlebars
 app.engine(
@@ -29,6 +32,9 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+// This is just a test
+// require("./config/passport")(app);
+// End Test.
 
 var syncOptions = { force: false };
 
